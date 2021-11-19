@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="salesperson_view_form">
+            <field name="name">custom_salesperson.salesperson.form</field>
+            <field name="model">custom_salesperson.salesperson</field>
+            <field name="arch" type="xml">
+                <form string="Salesperson Form">
+                    <sheet>
+                        <h1><field name="name"/></h1>
+                        <group>
+                            <group>
+                                <field name="active"/>
+                                <field name="description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter" modifiers="{}">
+                        <field name="message_follower_ids" modifiers="{}" id="message_follower_ids"/>
+                        <field name="activity_ids" modifiers="{}" id="activity_ids"/>
+                        <field name="message_main_attachment_id" invisible="1" on_change="1" can_create="true" can_write="true" modifiers="{'invisible':true}" id="message_main_attachment_id"/>
+                        <field name="message_ids" options="{'post_refresh': 'always'}" modifiers="{}" id="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="salesperson_view_list">
+            <field name="name">custom_salesperson.salesperson.list</field>
+            <field name="model">custom_salesperson.salesperson</field>
+            <field name="arch" type="xml">
+                <tree string="Salesperson List">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="salesperson_view_search">
+            <field name="name">custom_salesperson.salesperson.search</field>
+            <field name="model">custom_salesperson.salesperson</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="description"/>
+                </search>
+            </field>
+        </record>
+        
+    </data>
+</odoo>
