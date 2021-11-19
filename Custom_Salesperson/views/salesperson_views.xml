@@ -15,12 +15,6 @@
                             </group>
                         </group>
                     </sheet>
-                    <div class="oe_chatter" modifiers="{}">
-                        <field name="message_follower_ids" modifiers="{}" id="message_follower_ids"/>
-                        <field name="activity_ids" modifiers="{}" id="activity_ids"/>
-                        <field name="message_main_attachment_id" invisible="1" on_change="1" can_create="true" can_write="true" modifiers="{'invisible':true}" id="message_main_attachment_id"/>
-                        <field name="message_ids" options="{'post_refresh': 'always'}" modifiers="{}" id="message_ids"/>
-                    </div>
                 </form>
             </field>
         </record>
