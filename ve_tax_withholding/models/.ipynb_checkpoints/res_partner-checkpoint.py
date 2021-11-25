@@ -19,8 +19,9 @@ class ResPartner(models.Model):
                 
     
     @api.model
-    def _type(self):
-        for partner in self:
+    def _type:
+        partners = self.env['res.partner']
+        for partner in partners:
             if partner.is_company:
                 self.partner_type_custom = 'PJD'
             else:
