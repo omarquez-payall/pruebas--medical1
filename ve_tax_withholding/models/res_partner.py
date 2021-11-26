@@ -19,5 +19,5 @@ class ResPartner(models.Model):
     
     @api.model
     def _type(self):
-        return "mierda"
+        return "PND"
                 
