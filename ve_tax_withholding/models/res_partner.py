@@ -17,7 +17,7 @@ class ResPartner(models.Model):
                 self.partner_type_custom = 'PND'
                 
     
-    @api.multi
+    @api.model
     def _type(self):
         partners = self.env['res.partner']
         for partner in partners:
