@@ -19,5 +19,8 @@ class ResPartner(models.Model):
     
     @api.model
     def _type(self):
-        return "PND"
+        partners = self.env['res.partner']
+        for partner in partners:
+            if partner.is_company:
+                return "PND"
                 
