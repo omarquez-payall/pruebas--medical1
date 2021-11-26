@@ -6,7 +6,9 @@ class ResPartner(models.Model):
     
     _inherit = 'res.partner' 
     
-    partner_type_custom = fields.Selection([('PND', 'PND'),('PJD','PJD')], string='partner custom', store=True, default=lambda self: self._type())
+    partner_type_custom = fields.Selection([('PND', 'PND'),('PJD','PJD')], string='partner custom', store=True)
+    
+    test = fields.Boolean(string='fuck', default=lambda self: self._type())
     
     @api.onchange('is_company')
     def _partner_type(self):
