@@ -22,7 +22,7 @@ class ResPartner(models.Model):
         for record in self:
             partner = self.env['res.partner'].search(['id','=',record.id])
             if partner.is_company:
-                record.partner_type_custom = "PJD"
+                return "PJD"
             else:
-                record.partner_type_custom = "PND"
+                return "PND"
                 
