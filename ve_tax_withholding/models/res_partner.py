@@ -6,8 +6,7 @@ class ResPartner(models.Model):
     
     _inherit = 'res.partner' 
     
-    
-    partner_type_custom = fields.Selection([('PND', 'PND'),('PJD','PJD')], string='partner custom', store=True, )
+    partner_type_custom = fields.Selection([('PND', 'PND'),('PJD','PJD')], string='partner custom', store=True, default=lambda self: self._type() )
     
     @api.onchange('is_company')
     def _partner_type(self):
@@ -23,6 +22,6 @@ class ResPartner(models.Model):
         partners = self.env['res.partner']
         for partner in partners:
             if partner.is_company:
-                self.partner_type_custom = 'PJD'
+                return 'PJD'
             else:
-                self.partner_type_custom = 'PND'
+                return 'PND'

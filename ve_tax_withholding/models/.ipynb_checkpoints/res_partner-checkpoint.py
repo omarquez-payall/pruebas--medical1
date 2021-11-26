@@ -6,7 +6,6 @@ class ResPartner(models.Model):
     
     _inherit = 'res.partner' 
     
-    
     partner_type_custom = fields.Selection([('PND', 'PND'),('PJD','PJD')], string='partner custom', store=True, )
     
     @api.onchange('is_company')
