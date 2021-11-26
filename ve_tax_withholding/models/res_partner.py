@@ -21,6 +21,4 @@ class ResPartner(models.Model):
     def _type(self):
         partners = self.env['res.partner']
         for partner in partners:
-            if partner.is_company:
-                return "PND"
-                
+            return partner.is_company:                
