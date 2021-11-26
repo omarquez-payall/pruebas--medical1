@@ -19,7 +19,7 @@ class ResPartner(models.Model):
     
     @api.model
     def _type(self):
-        partners = self.env['res.partner']
+        partners = self.env['res.partner'].search_read([], ['is_company'])
         for partner in partners:
             if partner.is_company:
                 return 'PJD'
