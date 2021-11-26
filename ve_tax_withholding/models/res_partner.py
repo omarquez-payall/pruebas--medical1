@@ -19,9 +19,10 @@ class ResPartner(models.Model):
     
     @api.model
     def _type(self):
-        partners = self.env['res.partner']
-        for partner in partners:
+        for record in self:
+            partner = self.env['res.partner'].search(['id','=',record.id])
             if partner.is_company:
-                rec.partner_type_custom = 'PJD'
+                record.partner_type_custom = "PJD"
             else:
-                rec.partner_type_custom = 'PND'
+                record.partner_type_custom = "PND"
+                
