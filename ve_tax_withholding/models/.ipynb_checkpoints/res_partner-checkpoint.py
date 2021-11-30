@@ -21,8 +21,4 @@ class ResPartner(models.Model):
     
     @api.model
     def _type(self):
-        partners = self.env['res.partner']
-        for partner in partners:
-            partner.update({
-                partner.test: 't'
-            })             
+        return 'mamame_el_guebo'            
