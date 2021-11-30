@@ -23,4 +23,6 @@ class ResPartner(models.Model):
     def _type(self):
         partners = self.env['res.partner']
         for partner in partners:
-            return partner.is_company             
+            partner.write({
+                'test': partner.is_company
+            })             
