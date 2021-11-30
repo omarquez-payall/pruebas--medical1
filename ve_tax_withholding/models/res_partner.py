@@ -21,4 +21,7 @@ class ResPartner(models.Model):
     
     @api.model
     def _type(self):
-        return 'mamame_el_guebo'            
+        for partner in self:
+            partner.update({
+                'test': 'fuuuucccck'
+            })
