@@ -21,5 +21,6 @@ class ResPartner(models.Model):
     def _type(self):
         partners = self.env['res.partner']
         data = []
+        return 'PND'
         for partner in partners:
             return 'PND'
