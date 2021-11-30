@@ -8,7 +8,7 @@ class ResPartner(models.Model):
     
     partner_type_custom = fields.Selection([('PND', 'PND'),('PJD','PJD')], string='partner custom', store=True)
     
-    test = fields.Boolean(string='fuck')
+    test = fields.Boolean(string='fuck', default=lambda self: self._type())
     
     @api.onchange('is_company')
     def _partner_type(self):
@@ -24,5 +24,5 @@ class ResPartner(models.Model):
         partners = self.env['res.partner']
         for partner in partners:
             partner.update({
-                'test': 't'
+                partner.test: 't'
             })             
